@@ -1,0 +1,32 @@
+<div class="login-modal">
+  <mat-card>
+    <mat-card-header>
+      <div style="width: 100%" class="text-center">
+        <mat-card-title *ngIf="!sign">Login</mat-card-title>
+        <mat-card-title *ngIf="sign">Sign Up</mat-card-title>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form (ngSubmit)="onAuth()">
+        <mat-form-field class="login-form" appearance="outline">
+          <mat-label>Enter the login</mat-label>
+          <input minlength="4" type="text" [(ngModel)]="login" name="username" matInput>
+          <mat-hint *ngIf="empty" class="empty">Enter the username and password</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="login-form" appearance="outline">
+          <mat-label>Enter the password</mat-label>
+          <input minlength="4" type="password" [(ngModel)]="password" name="password" matInput>
+          <mat-hint *ngIf="userNotFound" class="wrong-user">user not found</mat-hint>
+        </mat-form-field>
+
+        <div class="example-button-row btn-row" style="margin-top: 10px">
+          <button *ngIf="!sign" mat-raised-button color="primary">Enter</button>
+          <button *ngIf="sign" (click)="onAuth()" mat-raised-button color="primary">Register</button>
+          <button *ngIf="!sign" (click)="onSignUp()" mat-raised-button color="warn">Sign up</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,25 @@
+.login-modal {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.login-form {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.wrong-user, .empty {
+  color: crimson;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+}
